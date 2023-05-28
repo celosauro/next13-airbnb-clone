@@ -39,7 +39,7 @@ const Search = () => {
       return `${diff} Days`;
     }
 
-    return 'Any Week'
+    return 'Qualquer data'
   }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
@@ -73,7 +73,7 @@ const Search = () => {
           justify-between
         "
       >
-        <div 
+{/*         <div 
           className="
             text-sm 
             font-semibold 
@@ -95,7 +95,8 @@ const Search = () => {
           "
         >
           {durationLabel}
-        </div>
+          <BiSearch size={18} />
+        </div> */}
         <div 
           className="
             text-sm 
@@ -108,7 +109,9 @@ const Search = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
+          <div className="hidden sm:block">
+            {durationLabel}
+          </div>
           <div 
             className="
               p-2 

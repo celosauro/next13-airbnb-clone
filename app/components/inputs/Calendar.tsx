@@ -5,7 +5,7 @@ import {
   Range, 
   RangeKeyDict
 } from 'react-date-range';
-
+import * as rdrLocales from 'react-date-range/dist/locale';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
@@ -30,6 +30,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
       showDateDisplay={false}
       minDate={new Date()}
       disabledDates={disabledDates}
+      locale={rdrLocales.pt}
     />
    );
 }
