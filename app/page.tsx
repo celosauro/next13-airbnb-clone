@@ -7,6 +7,8 @@ import getListings, {
 } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
+import CardLineChart from "./components/Chart";
+import Chart from "./components/Chart";
 
 interface HomeProps {
   searchParams: IListingsParams
@@ -15,14 +17,14 @@ interface HomeProps {
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
-
+/* 
   if (listings.length === 0) {
     return (
       <ClientOnly>
         <EmptyState showReset />
       </ClientOnly>
     );
-  }
+  } */
 
   return (
     <ClientOnly>
@@ -40,13 +42,16 @@ const Home = async ({ searchParams }: HomeProps) => {
             gap-8
           "
         >
-          {listings.map((listing: any) => (
+          <Chart />
+
+          {/* {listings.map((listing: any) => (
             <ListingCard
               currentUser={currentUser}
               key={listing.id}
               data={listing}
             />
-          ))}
+          ))} */}
+          
         </div>
       </Container>
     </ClientOnly>
